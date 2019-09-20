@@ -3,7 +3,7 @@ import React from 'react'
 const Create = props => {
   return (
     <div>
-      This is About.
+      This is Create page.
     </div>
   )
 }
