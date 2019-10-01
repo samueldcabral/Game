@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel:700&display=swap');
+
 .App {
   background-image: url("img/dungeonseeker.jpg");
   background-repeat: no-repeat;
@@ -8,5 +10,62 @@
   overflow: hidden;
 }
 
+.home-header {
+  margin-top: 150px;
+  font-family: 'Cinzel', serif;
+}
 
+.btn-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  vertical-align: middle;
+  margin-top: 12rem;
+}
 
+.start-btn {
+  background-image: url('img/btn/start-btn-normal.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.start-btn:hover {
+  background-image: url('img/btn/start-btn-hover.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.start-btn:active {
+  background-image: url('img/btn/start-btn-push.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn {
+  background-image: url('img/btn/create-btn-normal.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn:hover {
+  background-image: url('img/btn/create-btn-hover.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn:active {
+  background-image: url('img/btn/create-btn-push.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
