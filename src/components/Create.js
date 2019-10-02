@@ -5,7 +5,7 @@ const Create = props => {
   return (
     <div>
       This is Create page.
-      <Link to="/dashboard">Click to go back</Link>
+      <Link to="/">Click to go back</Link>
     </div>
   )
 }
