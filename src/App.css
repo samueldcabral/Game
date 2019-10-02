@@ -69,3 +69,58 @@
   border: none;
   outline: none;
 }
+
+
+/* CARD CONTAINER */
+
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ */
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+div .card-bg {
+  background: url("img/cardtemplate.jpg") no-repeat;
+  background-size: cover;
+  min-width: 300px;
+  min-height: 430px;
+}
+
+.color-black {
+  color: rgb(53, 53, 53);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.flex-column {
+  flex-flow: column;
+}
+
+.card-box {
+  text-align: left;
+  margin-top: -4rem;
+  margin-left: 2rem;
+  /*padding-top: 2rem; */
+}
+
+.card-box p {
+  margin: 0;
+  padding: 0;
+}
+
+.card-name {
+  margin-top: -2.1em;
+}
+
+.card-img {
+  margin-top: -7.8rem;
+  width: 300px;
+  height: 300px;
+}
