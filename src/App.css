@@ -106,8 +106,10 @@ div .card-bg {
 .card-box {
   text-align: left;
   margin-top: -4rem;
-  margin-left: 2rem;
+  margin-left: 1rem;
   /*padding-top: 2rem; */
+  display: flex;
+  justify-content: space-around;
 }
 
 .card-box p {
@@ -123,4 +125,17 @@ div .card-bg {
   margin-top: -7.8rem;
   width: 300px;
   height: 300px;
+}
+
+
+.square {
+  width: 25px;
+  height: 25px;
+  /* border: 3px solid #3f3f3f; */
+  /* border: 3px solid #3a3a3a94; */
+  /* background: rgb(94,94,94); */
+  /* background: #564d4e9d; */
+  background: radial-gradient(circle, rgba(94,94,94,1) 0%, rgba(63,63,63,1) 100%);;
+  border-radius: 5px;
+  margin: 0.5rem;
 }

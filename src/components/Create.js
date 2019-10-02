@@ -10,7 +10,14 @@ const Create = props => {
       <Link to="/">Click to go back</Link>
 
       <div className="container">
-      <Card />
+      <Card 
+          name={'Archer'}
+          brain={10}
+          defense={20}
+          hp={50}
+          speed={10}
+          strenght={10}
+        />
       <div>
         FORM AQUI
       </div>
