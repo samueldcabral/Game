@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from "./components/Home";
 import Create from "./components/Create";
 import Start from "./components/Start";
+import CreateForm from './components/CreateForm';
 
 import './App.css';
 
@@ -13,6 +14,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/create" exact component={Create} />
+          <Route path="/create/archer" exact component={CreateForm} />
           <Route path="/start" exact component={Start} />
         </Switch>
       </Router>
