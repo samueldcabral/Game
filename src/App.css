@@ -1,5 +1,152 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel:700&display=swap');
 
+
+.App {
+  background-image: url("img/dungeonseeker.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Referente a rota Home.js */
+.home-header {
+  margin-top: 150px;
+  font-family: 'Cinzel', serif;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  vertical-align: middle;
+  margin-top: 12rem;
+}
+
+.start-btn {
+  background-image: url('img/btn/start-btn-normal.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.start-btn:hover {
+  background-image: url('img/btn/start-btn-hover.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.start-btn:active {
+  background-image: url('img/btn/start-btn-push.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn {
+  background-image: url('img/btn/create-btn-normal.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn:hover {
+  background-image: url('img/btn/create-btn-hover.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn:active {
+  background-image: url('img/btn/create-btn-push.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+
+
+/* Referente a rota Dashboard.js */
+.dashboard-div{
+  display: contents;
+}
+
+.info{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 100px;
+  margin-top: 25px;
+}
+
+.info label{
+margin-left: 35px;
+}
+
+.info img{
+  padding-right: 5px;
+}
+
+.main-div{
+  display: flex;
+  display: flex;
+  height: 80%;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.card-status{
+  display: flex;
+  width: 70%;
+  height: 90%;
+  justify-content: space-between;
+}
+
+.pergaminho{
+  width:50%;
+  max-width: 400px;
+  /* background-image: url('img/dashboard/Pergaminho2.jpg'); */
+  background-repeat: no-repeat;
+  background-size: 300px;
+}
+
+.card-ds{
+  margin-right: 300px;
+  margin-top: 90px;
+}
+
+.btn-battle{
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 70px;
+  margin-top: 30px;
+  padding-left: 50px;
+}
+
+.battle-btn {
+  background-image: url('img/btn/battle-btn-normal.png');
+  width: 200px;
+  height: 55px;
+  border: none;
+  outline: none;
+}
+
+.battle-btn:hover
+{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+@import url('https://fonts.googleapis.com/css?family=Cinzel:700&display=swap');
+
 .App {
   background-image: url("img/dungeonseeker.jpg");
   background-repeat: no-repeat;
