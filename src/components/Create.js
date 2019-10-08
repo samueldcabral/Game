@@ -1,3 +1,7 @@
+
+import React from 'react'
+import Class from './Class';
+
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -30,22 +34,13 @@ const Create = props => {
   console.log(classes)
 
   return (
-    <div>
-      This is Create page.
-      <Link to="/">Click to go back</Link>
-
-      <div className="container">
-      <Card 
-          name={char.name}  // RESOLVER PQ ISSO ESTÁ DANDO UNDEFINED
-          brain={char.brain}
-          defense={char.defense}
-          hp={char.hp}
-          speed={char.speed}
-          strenght={char.strenght}
-        />
-      <div>
-        FORM AQUI
-      </div>
+    <div className="select-class">
+      <h2 className="select-class-header">Choose your class to begin your adventure...</h2>
+      <div className="container-class">
+      <Class name='Archer' />
+      <Class name='Warrior' />
+      <Class name='Witch' />
+      <Class name='Priest' />
     </div>
     </div>
   )

@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Cinzel:700&display=swap');
 
 
@@ -286,3 +287,65 @@ div .card-bg {
   border-radius: 5px;
   margin: 0.5rem;
 }
+
+/* SELECT CLASS SECTION */
+.select-class-header {
+  margin-top: 80px;
+  font-family: 'Cinzel', serif;
+}
+
+.container-class {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.class {
+  width: 500px;
+  height: 200px;
+}
+
+.class img {
+  width: 125%;
+  height: auto;
+}
+
+.class img:hover{
+  backdrop-filter: blur(3px);
+  cursor:pointer;
+  border-style: inset;
+  border-radius: 250px;
+}
+
+/* FORM STYLES */
+input[type=text],input[type=email], input[type=password] {
+  width: 100%; 
+  padding: 6px; 
+  border: 1px solid #ccc;
+  border-radius: 5px; 
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container-form{
+  border-radius: 30px;
+  margin-top: 30px;
+}
+
