@@ -3,6 +3,7 @@ import React from 'react'
 import GameButton from './GameButton'
 import cash from '../img/dashboard/gold-saco2.png'
 import chest from '../img/dashboard/gold-bau2.png'
+import Card from './Card'
 
 const Dashboard = props => {
     return (
@@ -13,7 +14,16 @@ const Dashboard = props => {
             </div>
             <div className="main-div">
                 <div className="card-status">
-                    <div className="pergaminho"></div>
+                    <div className="container">
+                        <Card 
+                            name={'Archer'}
+                            brain={10}
+                            defense={20}
+                            hp={50}
+                            speed={10}
+                            strenght={10}
+                        />
+                    </div>
                     <div className="card-ds">
                         <label>Bla bla bla</label><br></br>
                         <label>Bla bla bla</label><br></br>
