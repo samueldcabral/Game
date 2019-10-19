@@ -1,13 +1,15 @@
 import React from 'react'
 
 const Card = ({name, brain, defense, hp, speed, strenght}) => {
+
+  console.log(name)
   return (
     <div className="card-bg container flex-column">
       <div>
         <p className="color-black bolder card-name">{name}</p>
       </div>
       <div>
-        <img className="card-img" src={require(`../img/heros/${name.toLowerCase()}.png`)} alt={name}/>
+        <img className="card-img" src={require(`../img/heros/archer.png`)} alt={name}/>
       </div>
       <div className="card-box color-black">
         <div className="card-item">

@@ -1,17 +1,34 @@
  
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from './Card';
 
+import { getClass } from '../services/api'
+
 const CreateForm = props => {
+
+  const [char, setChar] = useState('')
+
+  const { id } = props.match.params
+
+  console.log(props)
+  useEffect(() => {
+    async function loadClass(id) {
+      const response = await getClass(id);
+      setChar(response.data)
+    }
+    loadClass(id)
+  }, [])
+
   return (
     <div className="container">
       <Card 
-          name={'Archer'}
-          brain={10}
-          defense={20}
-          hp={50}
-          speed={10}
-          strenght={10}
+          name={`${char.name}`}
+          brain={char.brain}
+          defense={char.defense}
+          hp={char.hp}
+          speed={char.speed}
+          strenght={char.strenght}
+          
         />
       <div className="container-form">
         <form>
