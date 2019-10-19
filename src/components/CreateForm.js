@@ -20,7 +20,7 @@ const CreateForm = props => {
   }, [])
 
   return (
-    <div className="container">
+    <div className="container" style={{marginTop: '6rem'}}>
       <Card 
           name={`${char.name}`}
           brain={char.brain}
@@ -28,7 +28,6 @@ const CreateForm = props => {
           hp={char.hp}
           speed={char.speed}
           strenght={char.strenght}
-          
         />
       <div className="container-form">
         <form>
