@@ -1,15 +1,14 @@
 import React from 'react'
 
-const Card = ({name, brain, defense, hp, speed, strenght}) => {
+const Card = ({name, brain, defense, hp, speed, strenght, img}) => {
 
-  console.log(name)
   return (
     <div className="card-bg container flex-column">
       <div>
         <p className="color-black bolder card-name">{name}</p>
       </div>
       <div>
-        <img className="card-img" src={require(`../img/heros/archer.png`)} alt={name}/>
+        <img className="card-img" src={require(`../img/heros/${img}.png`)} alt={name}/>
       </div>
       <div className="card-box color-black">
         <div className="card-item">

@@ -10,7 +10,6 @@ const CreateForm = props => {
 
   const { id } = props.match.params
 
-  console.log(props)
   useEffect(() => {
     async function loadClass(id) {
       const response = await getClass(id);
@@ -18,6 +17,7 @@ const CreateForm = props => {
     }
     loadClass(id)
   }, [])
+  console.log(props)
 
   return (
     <div className="container" style={{marginTop: '6rem'}}>
@@ -28,6 +28,7 @@ const CreateForm = props => {
           hp={char.hp}
           speed={char.speed}
           strenght={char.strenght}
+          img={`${char.name === undefined ? undefined : char.name.toLowerCase()}`}
         />
       <div className="container-form">
         <form>
