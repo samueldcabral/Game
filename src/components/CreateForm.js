@@ -16,7 +16,7 @@ const CreateForm = props => {
       setChar(response.data)
     }
     loadClass(id)
-  }, [])
+  }, [id])
   console.log(props)
 
   return (
