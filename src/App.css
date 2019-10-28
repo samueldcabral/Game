@@ -1,33 +1,351 @@
+
+@import url('https://fonts.googleapis.com/css?family=Cinzel:700&display=swap');
+
+
 .App {
+  background-image: url("img/dungeonseeker.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+/* Referente a rota Home.js */
+.home-header {
+  margin-top: 150px;
+  font-family: 'Cinzel', serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  vertical-align: middle;
+  margin-top: 12rem;
 }
+
+.start-btn {
+  background-image: url('img/btn/start-btn-normal.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.start-btn:hover {
+  background-image: url('img/btn/start-btn-hover.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.start-btn:active {
+  background-image: url('img/btn/start-btn-push.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn {
+  background-image: url('img/btn/create-btn-normal.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn:hover {
+  background-image: url('img/btn/create-btn-hover.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn:active {
+  background-image: url('img/btn/create-btn-push.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+
+
+/* Referente a rota Dashboard.js */
+.dashboard-div{
+  display: contents;
+}
+
+.info{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 100px;
+  margin-top: 25px;
+}
+
+.info label{
+margin-left: 35px;
+}
+
+.info img{
+  padding-right: 5px;
+}
+
+.main-div{
+  display: flex;
+  display: flex;
+  height: 80%;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.card-status{
+  display: flex;
+  width: 70%;
+  height: 90%;
+  justify-content: space-between;
+}
+
+.pergaminho{
+  width:50%;
+  max-width: 400px;
+  /* background-image: url('img/dashboard/Pergaminho2.jpg'); */
+  background-repeat: no-repeat;
+  background-size: 300px;
+}
+
+.card-ds{
+  margin-right: 300px;
+  margin-top: 90px;
+}
+
+.btn-battle{
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 70px;
+  margin-top: 30px;
+  padding-left: 50px;
+}
+
+.battle-btn {
+  background-image: url('img/btn/battle-btn-normal.png');
+  width: 200px;
+  height: 55px;
+  border: none;
+  outline: none;
+}
+
+.battle-btn:hover
+{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+@import url('https://fonts.googleapis.com/css?family=Cinzel:700&display=swap');
+
+.App {
+  background-image: url("img/dungeonseeker.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-header {
+  margin-top: 150px;
+  font-family: 'Cinzel', serif;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  vertical-align: middle;
+  margin-top: 12rem;
+}
+
+.start-btn {
+  background-image: url('img/btn/start-btn-normal.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.start-btn:hover {
+  background-image: url('img/btn/start-btn-hover.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.start-btn:active {
+  background-image: url('img/btn/start-btn-push.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn {
+  background-image: url('img/btn/create-btn-normal.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn:hover {
+  background-image: url('img/btn/create-btn-hover.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.create-btn:active {
+  background-image: url('img/btn/create-btn-push.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+
+/* CARD CONTAINER */
+
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ */
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+div .card-bg {
+  background: url("img/cardtemplate.jpg") no-repeat;
+  background-size: cover;
+  min-width: 300px;
+  min-height: 430px;
+}
+
+.color-black {
+  color: rgb(53, 53, 53);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.flex-column {
+  flex-flow: column;
+}
+
+.card-box {
+  text-align: left;
+  margin-top: -4rem;
+  margin-left: 1rem;
+  /*padding-top: 2rem; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-box p {
+  margin: 0;
+  padding: 0;
+}
+
+.card-name {
+  margin-top: -2.1em;
+}
+
+.card-img {
+  margin-top: -7.8rem;
+  width: 300px;
+  height: 300px;
+}
+
+
+.square {
+  width: 25px;
+  height: 25px;
+  /* border: 3px solid #3f3f3f; */
+  /* border: 3px solid #3a3a3a94; */
+  /* background: rgb(94,94,94); */
+  /* background: #564d4e9d; */
+  background: radial-gradient(circle, rgba(94,94,94,1) 0%, rgba(63,63,63,1) 100%);;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+/* SELECT CLASS SECTION */
+.select-class-header {
+  margin-top: 80px;
+  font-family: 'Cinzel', serif;
+}
+
+.container-class {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.class {
+  width: 500px;
+  height: 200px;
+}
+
+.class img {
+  width: 125%;
+  height: auto;
+}
+
+.class img:hover{
+  backdrop-filter: blur(3px);
+  cursor:pointer;
+  border-style: inset;
+  border-radius: 250px;
+}
+
+/* FORM STYLES */
+input[type=text],input[type=email], input[type=password] {
+  width: 100%; 
+  padding: 6px; 
+  border: 1px solid #ccc;
+  border-radius: 5px; 
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container-form{
+  border-radius: 30px;
+  margin-top: 30px;
+}
+
