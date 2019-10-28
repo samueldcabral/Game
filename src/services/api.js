@@ -1,15 +1,15 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://dungeon-seeker.firebaseio.com'
+  baseURL: 'http://localhost:5000/api/'
 })
 
 export async function getClasses() {
-  return await api.get('/classes.json')
+  return await api.get('/classes')
 };
 
 export async function getClass(id) {
-  return await api.get(`/classes/${id}.json`)
+  return await api.get(`/classes/${id}`)
 };
 
 export default api
