@@ -1,11 +1,26 @@
-import React from 'react'
 // import { Link } from 'react-router-dom'
 import GameButton from './GameButton'
 import cash from '../img/dashboard/gold-saco2.png'
 import chest from '../img/dashboard/gold-bau2.png'
 import Card from './Card'
+import React, { useState, useEffect } from 'react'
+import { getClass } from '../services/api'
 
 const Dashboard = props => {
+
+    const [char, setChar] = useState('')
+
+    const { id } = props.match.params
+  
+    useEffect(() => {
+      async function loadClass(id) {
+        const response = await getClass(id);
+        setChar(response.data)
+      }
+      loadClass(id)
+    }, [id])
+    console.log(props)
+
     return (
         <div className="dashboard-div">
             <div className="info">
@@ -16,12 +31,13 @@ const Dashboard = props => {
                 <div className="card-status">
                     <div className="container">
                         <Card 
-                            name={'Archer'}
-                            brain={10}
-                            defense={20}
-                            hp={50}
-                            speed={10}
-                            strenght={10}
+                            name={`${char.name}`}
+                            brain={char.brain}
+                            defense={char.defense}
+                            hp={char.hp}
+                            speed={char.speed}
+                            strenght={char.strenght}
+                            img={`${char.name === undefined ? undefined : char.name.toLowerCase()}`}
                         />
                     </div>
                     <div className="card-ds">

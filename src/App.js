@@ -17,7 +17,7 @@ function App() {
           <Route path="/create" exact component={Create} />
           <Route path="/create/:name/:id" exact component={CreateForm} />
           <Route path="/start" exact component={Start} />
-          <Route path="/dashboard" exact component={Dashboard} />
+          <Route path="/dashboard/:name/:id" exact component={Dashboard} />
         </Switch>
       </Router>
     </div>
