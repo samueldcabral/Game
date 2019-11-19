@@ -9,8 +9,8 @@ const Dashboard = props => {
     return (
         <div className="dashboard-div">
             <div className="info">
-                <label><img src={chest}></img>DGS</label>
-                <label><img src={cash}></img>Cash</label>
+                <label><img src={chest} alt="chest"></img>DGS</label>
+                <label><img src={cash} alt="cash"></img>Cash</label>
             </div>
             <div className="main-div">
                 <div className="card-status">

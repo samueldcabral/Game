@@ -5,6 +5,7 @@ import Create from "./components/Create";
 import Start from "./components/Start";
 import CreateForm from './components/CreateForm';
 import Dashboard from "./components/Dashboard";
+import Battle from './components/Battle';
 
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/create/:name/:id" exact component={CreateForm} />
           <Route path="/start" exact component={Start} />
           <Route path="/dashboard" exact component={Dashboard} />
+          <Route path="/battle" exact component={Battle} />
         </Switch>
       </Router>
     </div>
