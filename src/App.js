@@ -5,6 +5,7 @@ import Create from "./components/Create";
 import Start from "./components/Start";
 import CreateForm from './components/CreateForm';
 import Dashboard from "./components/Dashboard";
+import ErrorRoute from "./components/ErrorRoute";
 
 import './App.css';
 import './Style.css';
@@ -19,6 +20,7 @@ function App() {
           <Route path="/create-form" exact component={CreateForm} />
           <Route path="/start" exact component={Start} />
           <Route path="/dashboard/:name" exact component={Dashboard} />
+          <Route path="*" component={ErrorRoute} />
         </Switch>
       </Router>
     </div>
