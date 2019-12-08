@@ -7,6 +7,7 @@ import CreateForm from './components/CreateForm';
 import Dashboard from "./components/Dashboard";
 
 import './App.css';
+import './Style.css';
 
 function App() {
   return (
@@ -15,9 +16,9 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/create" exact component={Create} />
-          <Route path="/create/:name/:id" exact component={CreateForm} />
+          <Route path="/create-form" exact component={CreateForm} />
           <Route path="/start" exact component={Start} />
-          <Route path="/dashboard/:name/:id" exact component={Dashboard} />
+          <Route path="/dashboard/:name" exact component={Dashboard} />
         </Switch>
       </Router>
     </div>
