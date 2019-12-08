@@ -143,6 +143,7 @@ margin-left: 35px;
 
 .battle-btn:hover
 {
+  background-image: url('img/btn/battle-btn-hover.png');
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
