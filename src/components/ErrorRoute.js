@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-const Create = props => {
+const Create = () => {
   return (
     <div>
       Rota inexistente
