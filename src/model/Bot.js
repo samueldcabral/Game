@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { getClasses } from '../services/api'
 
 
-const Bot = () => {
+const Bot = (props) => {
 
   const [classes, setClasses] = useState([])
 
@@ -13,12 +13,20 @@ const Bot = () => {
       return setClasses(response.data)
     }
     loadClasses()
+
   }, [])
   
   let bot = classes[Object.keys(classes)[Math.floor(Math.random()*Object.keys(classes).length)]]
   
   let botCard = ''
   if (bot !== undefined) {
+
+    if(bot.strenght > props.strenght) {
+      props.setBattleWinner("Bot")
+    } else {
+      props.setBattleWinner("User")
+    }
+
     botCard = (
         <div>
           <div>
