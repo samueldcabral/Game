@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const GameButton = ({type}) => {
+const GameButton = ({type, name}) => {
   return (
-    <Link to={'/'+ type} className={type + '-btn'}></Link>
+    <Link to={`/${type}/${name}`} className={type + '-btn'}></Link>
   )
 }
 

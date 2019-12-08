@@ -73,7 +73,53 @@
   outline: none;
 }
 
+.fight-btn {
+  background-image: url('img/btn/fight-btn-normal.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
 
+.fight-btn:hover {
+  background-image: url('img/btn/fight-btn-hover.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.fight-btn:active {
+  background-image: url('img/btn/fight-btn-push.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.defend-btn {
+  background-image: url('img/btn/defend-btn-normal.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.defend-btn:hover {
+  background-image: url('img/btn/defend-btn-hover.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
+
+.defend-btn:active {
+  background-image: url('img/btn/defend-btn-push.png');
+  width: 397px;
+  height: 112px;
+  border: none;
+  outline: none;
+}
 
 /* Referente a rota Dashboard.js */
 .dashboard-div{

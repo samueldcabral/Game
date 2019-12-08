@@ -3,57 +3,130 @@ import { Link } from 'react-router-dom'
 import Card from './Card'
 import Bot from '../model/Bot'
 import GameButton from './GameButton'
- 
+import ErrorRoute from './ErrorRoute'
+import { getSeekerByName, getSeekerCardByName } from '../services/api'
 
 const Battle = props => {
 
   const [winner, setWinner] = useState("")
+  const [seeker, setSeeker] = useState('')
+  const [bot, setBot] = useState('')
+  const [seekerCard, setSeekerCard] = useState('')
+  const [redirctTo, setRedirctTo] = useState(false);
 
-    const setBattleWinner = (winner) => {
-      setWinner(winner)
-      // console.log(`Battle Winner is ${winner}`)
+  const { name } = props.match.params
+
+  const setBattleWinner = (winner) => {
+    setWinner(winner)
+    // console.log(`Battle Winner is ${winner}`)
+  }
+
+  const handleAttack = () => {
+    let timeNow = Date.now()
+    let botSum = bot.strenght + bot.brain
+    let warriorSum = seekerCard.strenght + seekerCard.brain
+
+    if( ( timeNow%13 ) % 2 === 0) {
+      warriorSum = (warriorSum * 1.2)
+    } else {
+      botSum = (botSum * 1.1)
+    }
+    
+    if(warriorSum > botSum) {
+      setWinner('user')
+    }else {
+      setWinner('bot')
     }
 
-    const onClick = () => {
-      console.log(`Battle Winner is ${winner}`)
+    setTimeout(() => {
+      props.history.goBack()
+    }, 2000)
+  }
 
+  const handleDefend = () => {
+    let botSum = bot.defense + bot.speed
+    let warriorSum = seekerCard.defense + seekerCard.speed
+    
+    if(warriorSum > botSum) {
+      setWinner('user')
+    }else if(warriorSum < botSum){
+      setWinner('bot')
+    }else{
+      setWinner('user')
     }
- 
-    useEffect(() => {
-      let audioBattle = new Audio(require(`../img/audio/battle-theme.mp3`))
-      audioBattle.play()
- 
-    }, [])
 
-    return (
-      <>
-        <button><Link to={'/dashboard'}>Go back to your dashboard</Link></button>
-        <h1>There can only be one survivor. Fight!</h1>
+    setTimeout(() => {
+      props.history.goBack()
+    }, 2000)
+  }
 
-      
+  useEffect(() => {
+    // let audioBattle = new Audio(require(`../img/audio/battle-theme.mp3`))
+    // audioBattle.play()
+    
+    async function loadClass(name) {
+      const response = await getSeekerByName(name);
+      if (response.data === null) {
+          setRedirctTo(true)
+      } else {
+          setSeeker(response.data)
+      }
 
-        <div className="container" style={{marginTop: '16rem'}}>
-          <Card 
-            name={'Warrior'}
-            brain={44}
-            defense={15}
-            hp={100}
-            speed={77}
-            strenght={56}
-            img={`${'Warrior' === undefined ? undefined : 'warrior'}`}
-          />
+      const response2 = await getSeekerCardByName(name);
+      if (response2.data === null) {
+          setRedirctTo(true)
+      } else {
+          setSeekerCard(response2.data)
+      }
+    }
+    loadClass(name)
 
-          {
-            winner === "" ?
-            <button onClick={onClick}>Fight!</button>     :
-            <h2>The Winner is {winner}....!</h2>
-          }
+    return () => {
+      // audioBattle.pause()
+    };
+
+  }, [name])
+
+
+  if(redirctTo){
+    return <ErrorRoute />
+ } 
+
+  return (
+    <>
+      {/* <button className="btn btn-primary" onClick={() => props.history.goBack()}>voltar</button>
+      <button><Link to={'/dashboard'}>Go back to your dashboard</Link></button> */}
+      <h1>There can only be one survivor. Fight!</h1>
+
+      <div className="container" style={{marginTop: '6rem'}}>
+      <Card 
+        name={`${seekerCard.character_name}`}
+        brain={seekerCard.brain}
+        defense={seekerCard.defense}
+        hp={seekerCard.hp}
+        speed={seekerCard.speed}
+        strenght={seekerCard.strenght}
+        img={`${seekerCard.name === undefined ? undefined : seekerCard.name.toLowerCase()}`}
+      />
+
+        {
+          winner === "" ?
+         (
+         
+          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>  
+            <button onClick={handleAttack} className="fight-btn" />
+            <button onClick={handleDefend} className="defend-btn" />
+          </div>
           
+          ) :
 
-          <Bot setBattleWinner={setBattleWinner} strenght={80}/>
+          <h2>The Winner is {winner}....!</h2>
+        }
+        
+        <Bot setBattleWinner={setBattleWinner} seeker={seekerCard} setBotStats={setBot}/>
 
-        </div>
-       </>
+      </div>
+      </>
     )
   }
 

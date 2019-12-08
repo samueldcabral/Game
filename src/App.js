@@ -20,7 +20,7 @@ function App() {
           <Route path="/create" exact component={Create} />
           <Route path="/create-form" exact component={CreateForm} />
           <Route path="/start" exact component={Start} />
-          <Route path="/battle" exact component={Battle} />
+          <Route path="/battle/:name" exact component={Battle} />
           <Route path="/dashboard/:name" exact component={Dashboard} />
           <Route path="*" component={ErrorRoute} />
         </Switch>
