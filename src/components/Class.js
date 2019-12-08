@@ -20,9 +20,10 @@ const Class = ({name, id}) => {
       <div>
         <Link 
           to={{
-            pathname: `create/${name}/${id}`,
+            pathname: `create-form`,
             state: {
-              id: id
+              id: id,
+              name: name
             }
           }}
         >

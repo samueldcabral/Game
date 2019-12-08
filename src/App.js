@@ -6,8 +6,10 @@ import Start from "./components/Start";
 import CreateForm from './components/CreateForm';
 import Dashboard from "./components/Dashboard";
 import Battle from './components/Battle';
+import ErrorRoute from "./components/ErrorRoute";
 
 import './App.css';
+import './Style.css';
 
 function App() {
   return (
@@ -16,10 +18,11 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/create" exact component={Create} />
-          <Route path="/create/:name/:id" exact component={CreateForm} />
+          <Route path="/create-form" exact component={CreateForm} />
           <Route path="/start" exact component={Start} />
-          <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/battle" exact component={Battle} />
+          <Route path="/dashboard/:name" exact component={Dashboard} />
+          <Route path="*" component={ErrorRoute} />
         </Switch>
       </Router>
     </div>
