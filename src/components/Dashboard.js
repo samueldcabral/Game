@@ -1,30 +1,44 @@
 // import { Link } from 'react-router-dom'
+import { Redirect, Link } from "react-router-dom";
 import GameButton from './GameButton'
 import cash from '../img/dashboard/gold-saco2.png'
 import chest from '../img/dashboard/gold-bau2.png'
 import Card from './Card'
 import React, { useState, useEffect } from 'react'
+import ErrorRoute from './ErrorRoute'
 import { getSeekerByName, getSeekerCardByName } from '../services/api'
 
 const Dashboard = props => {
 
     const [seeker, setSeeker] = useState('')
     const [seekerCard, setSeekerCard] = useState('')
+    const [redirctTo, setRedirctTo] = useState(false);
 
     const { name } = props.match.params
   
     useEffect(() => {
       async function loadClass(name) {
         const response = await getSeekerByName(name);
-        setSeeker(response.data)
+        if (response.data === null) {
+            setRedirctTo(true)
+        } else {
+            setSeeker(response.data)
+        }
 
         const response2 = await getSeekerCardByName(name);
-          setSeekerCard(response2.data)
+        if (response2.data === null) {
+            setRedirctTo(true)
+        } else {
+            setSeekerCard(response2.data)
+        }
       }
       loadClass(name)
     }, [name]
     )
     
+    if(redirctTo){
+       return <ErrorRoute />
+    } 
 
     return (
             <div className="dashboard-div">
