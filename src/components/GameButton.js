@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const GameButton = ({type, name}) => {
 
-  if(name != "" || name != undefined) {
+  if(name != undefined) {
     return <Link to={`/${type}/${name}`} className={type + '-btn'}></Link>
   }else{
     return (
