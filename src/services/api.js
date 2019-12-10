@@ -26,6 +26,7 @@ export async function getSeekerCardByName(username) {
 };
 
 export async function createSeeker(seeker) {
+  console.log("caiu no post")
   return await api.post(`/seekers`, {
     headers: {"Access-Control-Allow-Origin": "*"},
     seeker

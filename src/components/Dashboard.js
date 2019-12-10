@@ -55,7 +55,7 @@ const Dashboard = props => {
                         </div>
                     </div>
                     <div className="btn-battle">
-                        <GameButton type="battle" />
+                        <GameButton type="battle" name={name} />
                     </div>
                 </div>
             </div> 
