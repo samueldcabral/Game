@@ -3,6 +3,7 @@ import GameButton from './GameButton'
 import cash from '../img/dashboard/gold-saco2.png'
 import chest from '../img/dashboard/gold-bau2.png'
 import Card from './Card'
+import ErrorRoute from "./ErrorRoute"
 import React, { useState, useEffect } from 'react'
 import { getSeekerByName, getSeekerCardByName } from '../services/api'
 
@@ -10,21 +11,28 @@ const Dashboard = props => {
 
     const [seeker, setSeeker] = useState('')
     const [seekerCard, setSeekerCard] = useState('')
+    const [redirectTo, setRedirectTo] = useState(false);
 
     const { name } = props.match.params
   
     useEffect(() => {
       async function loadClass(name) {
         const response = await getSeekerByName(name);
+        if (response.data === null){
+            setRedirectTo(true)
+        } else{
         setSeeker(response.data)
-
+        }
         const response2 = await getSeekerCardByName(name);
           setSeekerCard(response2.data)
-      }
+        }
       loadClass(name)
     }, [name]
     )
-    console.log(props)
+   
+    if(redirectTo){
+        return <ErrorRoute />
+    }
     
 
     return (
