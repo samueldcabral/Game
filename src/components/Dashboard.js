@@ -1,44 +1,31 @@
 // import { Link } from 'react-router-dom'
-import { Redirect, Link } from "react-router-dom";
 import GameButton from './GameButton'
 import cash from '../img/dashboard/gold-saco2.png'
 import chest from '../img/dashboard/gold-bau2.png'
 import Card from './Card'
 import React, { useState, useEffect } from 'react'
-import ErrorRoute from './ErrorRoute'
 import { getSeekerByName, getSeekerCardByName } from '../services/api'
 
 const Dashboard = props => {
 
     const [seeker, setSeeker] = useState('')
     const [seekerCard, setSeekerCard] = useState('')
-    const [redirctTo, setRedirctTo] = useState(false);
 
     const { name } = props.match.params
   
     useEffect(() => {
       async function loadClass(name) {
         const response = await getSeekerByName(name);
-        if (response.data === null) {
-            setRedirctTo(true)
-        } else {
-            setSeeker(response.data)
-        }
+        setSeeker(response.data)
 
         const response2 = await getSeekerCardByName(name);
-        if (response2.data === null) {
-            setRedirctTo(true)
-        } else {
-            setSeekerCard(response2.data)
-        }
+          setSeekerCard(response2.data)
       }
       loadClass(name)
     }, [name]
     )
+    console.log(props)
     
-    if(redirctTo){
-       return <ErrorRoute />
-    } 
 
     return (
             <div className="dashboard-div">
@@ -48,7 +35,7 @@ const Dashboard = props => {
                 </div>
                 <div className="main-div">
                     <div className="card-status">
-                        <div style={{marginTop: '6rem'}}>
+                        <div>
                             <Card 
                                 name={`${seekerCard.character_name}`}
                                 brain={seekerCard.brain}
@@ -60,11 +47,11 @@ const Dashboard = props => {
                             />
                         </div>
                         <div className="card-ds">
-                            <label>Jogador: {seeker.username}</label><br></br>
-                            <label>Email: {seeker.email}</label><br></br>
-                            <label>Bla bla bla</label><br></br>
-                            <label>Bla bla bla</label><br></br>
-                            <label>Bla bla bla</label>
+                            <label className="font-dashboard">Jogador: {seeker.username}</label>
+                            <br></br>
+                            <br></br>
+                            <label className="font-dashboard">Email: {seeker.email}</label>
+                            <br></br>
                         </div>
                     </div>
                     <div className="btn-battle">
