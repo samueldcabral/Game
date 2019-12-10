@@ -5,6 +5,7 @@ import Bot from '../model/Bot'
 import GameButton from './GameButton'
 import ErrorRoute from './ErrorRoute'
 import { getSeekerByName, getSeekerCardByName } from '../services/api'
+import { createSeeker } from '../services/api'
 
 const Battle = props => {
 
@@ -34,8 +35,13 @@ const Battle = props => {
     
     if(warriorSum > botSum) {
       setWinner('user')
+      seeker.coins = seeker.coins + 10;
+      createSeeker(seeker)
+
     }else {
       setWinner('bot')
+      seeker.coins = seeker.coins - 5;
+      createSeeker(seeker)
     }
 
     setTimeout(() => {
@@ -49,10 +55,16 @@ const Battle = props => {
     
     if(warriorSum > botSum) {
       setWinner('user')
+      seeker.coins = seeker.coins + 10;
+      createSeeker(seeker)
     }else if(warriorSum < botSum){
       setWinner('bot')
+      seeker.coins = seeker.coins - 5;
+      createSeeker(seeker)
     }else{
       setWinner('user')
+      seeker.coins = seeker.coins + 10;
+      createSeeker(seeker)
     }
 
     setTimeout(() => {
